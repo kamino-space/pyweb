@@ -8,8 +8,7 @@ ADD docker/entrypoint.sh /app/docker/entrypoint.sh
 ADD conf /app/conf
 
 RUN \
-    source activate base &&\
-    conda install -y uwsgi django mysqlclient &&\
+    /opt/conda/bin/conda install -y uwsgi django mysqlclient &&\
     rm -rf /opt/conda/pkgs/* &&\
     rm -rf /root/.conda/pkgs/* &&\
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
