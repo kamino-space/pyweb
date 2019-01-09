@@ -12,6 +12,8 @@ RUN \
     rm -rf /opt/conda/pkgs/* &&\
     rm -rf /root/.conda/pkgs/* &&\
     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple &&\
-    conda install -y uwsgi 
+    apt update &&\
+    apt install -y build-essential &&\
+    pip install uwsgi
 
 CMD ["sh","docker/entrypoint.sh"]
