@@ -8,12 +8,9 @@ ADD docker/entrypoint.sh /app/docker/entrypoint.sh
 ADD conf /app/conf
 
 RUN \
-    /opt/conda/bin/conda install -y django mysqlclient &&\
+    /opt/conda/bin/conda create --name isdut -y python=3 django mysqlclient uwsgi &&\
     rm -rf /opt/conda/pkgs/* &&\
     rm -rf /root/.conda/pkgs/* &&\
-    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple &&\
-    apt update &&\
-    apt install -y build-essential &&\
-    pip install uwsgi
+    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple 
 
 CMD ["sh","docker/entrypoint.sh"]
