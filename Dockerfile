@@ -12,4 +12,4 @@ RUN \
     rm -rf /opt/conda/pkgs/* &&\
     rm -rf /root/.conda/pkgs/*
 
-CMD ["docker/entrypoint.sh"]
+CMD ["sh","docker/entrypoint.sh"]
