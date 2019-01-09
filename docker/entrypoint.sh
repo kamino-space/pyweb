@@ -1,2 +1,2 @@
 #!/bin/sh
-uwsgi --ini /app/conf/uwsgi.ini
+/opt/conda/bin/uwsgi --ini /app/conf/uwsgi.ini
